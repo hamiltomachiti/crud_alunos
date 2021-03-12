@@ -26,3 +26,19 @@ let alunos = [{
         email: "maria@email.com"
     }
 ];
+
+//tratamento de requisições POST
+app.post("/alunos", (req, res, next) => {
+    const aluno = {
+        id: id += 1,
+        nome: req.body.nome,
+        fone: req.body.fone,
+        email: req.body.email
+    }
+    alunos.push(aluno)
+    res.status(201).json(aluno);
+});
+//tratamento de requisições GET
+app.get("/alunos", (req, res, next) => {
+    res.status(200).json(alunos);
+})
